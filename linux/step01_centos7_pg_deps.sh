@@ -5,7 +5,7 @@ PGVER=${PGVER:-pg94}
 # Postgres installation
 if [ "$PGVER" = "pg94" ]; then
 	# Postgres, reconfigure to allow TCP connections
-	yum -y install http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-3.noarch.rpm
+	rpm -ivh /root/pgdg-centos94-9.4-3.noarch.rpm
 	yum -y install postgresql94-server postgresql94
 
 	if [ "${container:-}" = docker ]; then
